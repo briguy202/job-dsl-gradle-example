@@ -35,7 +35,15 @@ class JobScriptsSpec extends Specification {
     @Unroll
     void 'test script #file.name'(File file) {
         given:
-        JobManagement jm = new JenkinsJobManagement(System.out, [:], new File('.'))
+        JobManagement jm = new JenkinsJobManagement(System.out, [
+            "WORKSPACE":"/Users/brian/Development/amway-account-build",
+            "GIT_CREDENTIALS":"foo",
+            "NAMESPACE":"aa-srv",
+            "CODE_FOLDER":"code",
+            "GIT_BRANCH":"develop",
+            "ARTIFACT_BUCKET":"some-bucket-name",
+            "GIT_JOB_BRANCH":"develop"
+        ], new File('.'))
 
         when:
         GeneratedItems items = new DslScriptLoader(jm).runScript(file.text)
