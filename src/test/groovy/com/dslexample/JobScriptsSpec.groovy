@@ -42,7 +42,8 @@ class JobScriptsSpec extends Specification {
             "CODE_FOLDER":"code",
             "GIT_BRANCH":"develop",
             "ARTIFACT_BUCKET":"some-bucket-name",
-            "GIT_JOB_BRANCH":"develop"
+            "GIT_JOB_BRANCH":"develop",
+            "BASE_PATH": "/foo"
         ], new File('.'))
 
         when:
