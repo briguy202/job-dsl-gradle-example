@@ -18,9 +18,10 @@ Map config = [
         working: new File("$WORKSPACE/.script-run")
     ],
     git    : [
-        seedbranch : GIT_BRANCH,
-        jobbranch  : GIT_JOB_BRANCH,
-        credentials: GIT_CREDENTIALS
+        seedbranch       : GIT_BRANCH,
+        jobbranch        : GIT_JOB_BRANCH,
+        joboverridebranch: null,      // Can be used by implementations to change the targeted branch
+        credentials      : GIT_CREDENTIALS
     ],
     common : [
         namespace: NAMESPACE,
